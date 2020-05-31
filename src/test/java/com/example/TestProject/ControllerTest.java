@@ -15,6 +15,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 public class ControllerTest {
 
@@ -35,5 +37,11 @@ public class ControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("pass"));
 
+    }
+
+    @Test
+    public void hello_controller_returns_hello_() {
+
+        assertThat(testController.getResponse()).isEqualTo("hello");
     }
 }
