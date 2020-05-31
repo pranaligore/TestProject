@@ -42,6 +42,6 @@ public class ControllerTest {
     @Test
     public void hello_controller_returns_hello_() {
 
-        assertThat(testController.getResponse()).isEqualTo("hello");
+        assertThat(testController.getResponse()).isEqualTo("hello world");
     }
 }
